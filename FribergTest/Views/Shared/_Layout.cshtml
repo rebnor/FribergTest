@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - FribergTest</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/lib/font-awesome/css/all.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+
+        
+
+        <div class="navigation">
+            <nav>
+                <ul>
+
+                    <li>
+                        <a class="nav-left" asp-area="" asp-controller="Home" asp-action="Index">Hem</a>
+                    </li>
+
+                    <li>
+                        <a class="nav-left" asp-area="" asp-controller="Home" asp-action="ShowCars">Boka Bil</a>
+                    </li>
+                    <a class="homepage-logo" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/css/friberg_logo.png" width="300" height="320" /></a>
+                    <li>
+                        <a class="" asp-area="" asp-controller="Home" asp-action="LogInCustomer">Logga in som kund</a>
+                    </li>
+
+                    <li>
+                        <a class="" asp-area="" asp-controller="Home" asp-action="LogInAdmin">Admin</a>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
+
+    </header>
+
+    <div class="content">
+
+        <main role="main" class="main">
+
+            @RenderBody()
+
+        </main>
+
+    </div>
+
+    <footer>
+
+        <div class="footer">
+
+            &copy; 2024 - Friberg Biluthyrning AB
+
+        </div>
+
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

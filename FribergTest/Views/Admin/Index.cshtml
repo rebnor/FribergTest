@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Välkommen in @ViewBag.Username</h1>
+
+<div class="index-admin">
+    <div>
+        <a asp-area="" asp-controller="Admin" asp-action="ListCar"><i class="fa-solid fa-angles-right"></i> Visa alla bilar <i class="fa-solid fa-car-side"></i> </a>
+    </div>
+    <div>
+        <a asp-area="" asp-controller="Admin" asp-action="ListCustomer"><i class="fa-solid fa-angles-right"></i> Visa alla kunder <i class="fa-solid fa-user"></i></a>
+    </div>
+    <div>
+        <a asp-area="" asp-controller="Admin" asp-action="ListRent"><i class="fa-solid fa-angles-right"></i> Visa alla uthyrningar <i class="fa-regular fa-file-lines"></i></a>
+    </div>
+</div>

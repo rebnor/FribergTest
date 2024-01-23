@@ -1,0 +1,63 @@
+﻿@model IEnumerable<FribergTest.Models.Rent>
+
+@{
+    ViewData["Title"] = "ListRent";
+}
+<div class="back">
+    <a asp-action="Index" >&larr; Tillbaka</a>
+</div>
+
+<h1>Alla bokningar</h1>
+
+<p>
+    <a asp-action="CreateRent">Lägg in ny bokning</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Startdatum
+            </th>
+            <th>
+                Slutdatum
+            </th>
+            <th>
+                Kund-Id
+            </th>
+            <th>
+                Bil-Id
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="tr-td">
+                <td>
+                    @Html.DisplayFor(modelItem => item.RentId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RenturnDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Customer.CustomerId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Car.CarId)
+                </td>
+                <td class="edits">
+                    <a asp-action="Edit" asp-route-id="@item.RentId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.RentId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.RentId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

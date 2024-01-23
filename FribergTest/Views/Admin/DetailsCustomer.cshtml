@@ -1,0 +1,46 @@
+﻿@model FribergTest.Models.Customer
+
+@{
+    ViewData["Title"] = "DetailsCustomer";
+}
+
+<div class="back">
+    <a asp-action="ListCustomer">&larr; Tillbaka</a>
+</div>
+
+<h1><i class="fa-regular fa-file-lines"></i> <i class="fa-solid fa-user"></i> </h1>
+<hr />
+
+<div class="dl-div">
+
+    <dl>
+        <dt>
+            Id
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CustomerId)
+        </dd>
+        <dt>
+            Namn
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CustomerFirstName)
+            @Html.DisplayFor(model => model.CustomerLastName)
+        </dd>
+        <dt>
+            E-mail
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CustomerEmail)
+        </dd>
+        <dt>
+            Lösenord
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CustomerPassword)
+        </dd>
+    </dl>
+</div>
+<div class="edits">
+    <a asp-action="EditCustomer" asp-route-id="@Model?.CustomerId"><i class="fa-solid fa-angles-right"></i> Redigera kund <i class="fa-solid fa-pencil"></i></a>
+</div>

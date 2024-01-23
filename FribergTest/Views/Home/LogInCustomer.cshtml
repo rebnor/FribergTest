@@ -1,0 +1,39 @@
+﻿@model FribergTest.Models.Customer
+
+@{
+    ViewData["Title"] = "LogInCustomer";
+}
+<div class="back">
+    <a asp-action="Index">&larr; Tillbaka</a>
+</div>
+<h1><i class="fa-solid fa-user"></i></h1>
+
+<p>@ViewBag.Wrong</p>
+<hr />
+
+    <div class="form">
+        <form asp-action="LogInCustomer">
+
+            <div asp-validation-summary="ModelOnly"></div>
+
+            <div>
+                <label asp-for="CustomerEmail" >Email: </label>
+            <input asp-for="CustomerEmail" class="textbox" />
+                <span asp-validation-for="CustomerEmail"></span>
+            </div>
+            <div>
+                <label asp-for="CustomerPassword" >Lösenord: </label>
+            <input asp-for="CustomerPassword" class="textbox" />
+                <span asp-validation-for="CustomerPassword" ></span>
+            </div>
+            <div>
+            <input type="submit" value="Logga in" class="input-button" />
+            </div>
+        </form>
+    </div>
+<p class="edits createNew">
+    <a asp-action="CreateCustomer"><i class="fa-solid fa-angles-right"></i> Skapa nytt konto <i class="fa-solid fa-angles-left"></i></a>
+</p>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,373 @@
+@font-face {
+    font-family: "roboto";
+    src: url(/css/Fonts/roboto/RobotoCondensed-VariableFont_wght.ttf);
+}
+
+
+/*
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}*/
+/*
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+*/
+/* Color:
+    lightest grey: #FBFDFD
+    abit darker grey: #F2F5F7
+    light grey: #DAE1E3
+    beige/grey: #D0CFBC
+    dark grey: #3C484E
+    darket grey: #0F1F27
+    orange: #F39B24
+*/
+
+html {
+    background-color: #0F1F27;
+    font-family: "roboto";
+    height: 100%;
+    text-align: center;
+}
+
+body {
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+}
+
+header {
+    margin: 0 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    /*display: flex;*/
+}
+
+.homepage-logo {
+    padding-bottom: 1em;
+    z-index: 0;
+    margin: 0 auto;
+
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    color: #DAE1E3;
+    font-size: larger;
+}
+
+.navigation {
+    margin: 0 auto;
+    overflow: hidden;
+
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    display: inline-block;
+    padding: 20px;
+    vertical-align: middle;
+}
+
+nav a {
+    font: 400 24px "roboto";
+    color: #FBFDFD;
+    text-decoration: none;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+    nav a:hover {
+        text-shadow: 1px 1px 5px #FBFDFD;
+    }
+
+/*ljus orange F7C37B
+mörkare DA8B20*/
+h1 {
+    color: #F39B24;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #F7C37B;
+}
+
+/* height? */
+.content {
+    position: relative;
+    font-size: 18px;
+    background-color: white;
+    width: 60%;
+    margin: 0 auto;
+    height: 50%;
+    padding: 15px;
+}
+
+
+.back {
+    position: fixed;
+    float: left;
+    font-size: larger;
+    letter-spacing: 1px;
+}
+
+    .back a {
+        text-decoration: none;
+        color: #0F1F27;
+    }
+
+        .back a:hover {
+            text-shadow: 1px 1px 2px #DAE1E3;
+        }
+
+thead {
+    background-color: #DAE1E3;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+table {
+    background-color: #FBFDFD;
+    border-collapse: collapse;
+    margin: auto;
+}
+
+    table .tr-td:nth-child(odd) {
+        background-color: #F2F5F7;
+    }
+
+th, td {
+    padding: 5px 20px;
+    border-top: 1px solid #0F1F27;
+    border-bottom: 1px solid #0F1F27;
+}
+
+td {
+    border-left: 1px solid #DAE1E3;
+    border-right: 1px solid #DAE1E3;
+}
+
+.edits a {
+    text-decoration: none;
+    color: #0F1F27;
+}
+
+    .edits a:hover {
+        text-shadow: 1px 1px 1px #3C484E;
+    }
+
+.form div {
+    font-size: larger;
+    display: flex;
+    justify-content: center;
+}
+
+.textbox {
+    font-size: large;
+    margin: 10px;
+    border: none;
+    border-bottom: 1px solid #0F1F27;
+}
+
+.textarea {
+    border: 1px solid #3C484E;
+    box-shadow: 3px 3px 6px #DAE1E3;
+    resize: none;
+    font-size: large;
+    min-width: 200px;
+    height: 100px;
+    font-family: roboto;
+    padding: 0.5em;
+}
+
+.text-div label {
+    margin-top: 0.7em;
+}
+
+.input-button {
+    padding: 10px 30px;
+    font-size: larger;
+    font-family: "roboto";
+    background-color: #F39B24;
+    border-radius: 10px;
+    margin-top: 1.5em;
+    box-shadow: 1px 1px 5px #3C484E;
+    width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.create {
+    padding: 5px;
+}
+
+    .create a:hover {
+        text-shadow: none;
+    }
+
+.input-button:hover {
+    box-shadow: 0 0 4px 4px inset #DA8B20;
+}
+
+.dates input {
+    margin: 10px;
+    font: bold medium roboto;
+    letter-spacing: 2px;
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+.dates label {
+    margin-top: 1em;
+}
+
+hr {
+    border: 2px solid #0F1F27;
+}
+
+.dl-div {
+    text-align: left;
+    padding-left: 15%;
+}
+
+dt {
+    font-weight: bold;
+}
+
+dd {
+    padding-left: 5%;
+    margin-bottom: 2em;
+}
+
+.pet-img {
+    float: right;
+}
+
+img {
+    border-radius: 5%;
+}
+
+.info-edits {
+    margin-top: 10%;
+}
+
+.center-me {
+    padding-left: 30%;
+}
+/* röd #E84C19ff*/
+.danger {
+    background-color: #E84C19ff;
+}
+
+.question {
+    color: #E84C19ff;
+    text-shadow: 1px 0.5px 1px #DAE1E3;
+}
+
+.delete {
+    min-width: 150px;
+}
+
+/* Color:
+    lightest grey: #FBFDFD
+    abit darker grey: #F2F5F7
+    light grey: #DAE1E3
+    beige/grey: #D0CFBC
+    dark grey: #3C484E
+    darket grey: #0F1F27
+    orange: #F39B24
+*/
+.index-admin a {
+    text-decoration: none;
+    font-size: larger;
+    color: #0F1F27;
+}
+
+    .index-admin a:hover {
+        color: #F39B24;
+        text-shadow: 1px 0.5px 1px #DAE1E3;
+    }
+
+.index-admin {
+    display: flex;
+}
+
+    .index-admin div {
+        margin: 20px;
+        text-align: left;
+    }
+
+.createNew {
+    font-size: larger;
+}
+
+/* ändrar färg när mus förs över och gör att text blir tjockare 
+när användare klickat i checkbox eller radiobutton */
+.myCheckbox input:hover {
+    background-color: #F39B24;
+}
+
+.myCheckbox input:checked {
+    background-color: #E84C19ff;
+}
+
+    .myCheckbox input:checked + label {
+        font-weight: bold;
+        color: #4d3012;
+        letter-spacing: 1px;
+    }
+
+.checkboxarea {
+    width: 100px;
+    margin: auto;
+}
+
+.myCheckbox {
+    display: flex;
+    align-items: center;
+}
+
+    .myCheckbox input {
+        border-radius: 4px;
+    }
+
+    .myCheckbox label {
+        pointer-events: none;
+    }
+    /* designar egen input på checkbox och radiobuttons */
+    .myCheckbox input {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        width: 20px;
+        height: 20px;
+        border: 2px solid #0F1F27;
+        margin-right: 10px;
+        transition: background-color 0.3s;
+        cursor: pointer;
+    }
+
+.create-customer {
+    font-size: medium;
+}
+
+    .create-customer td {
+        padding: 5px;
+    }
+
+.loggedIn {
+    text-align: left;
+    padding-left: 20%;
+}
+.loggedIn img {
+    position: flex;
+    top:-20%;
+    left: 15%;
+    z-index:1;
+}
+

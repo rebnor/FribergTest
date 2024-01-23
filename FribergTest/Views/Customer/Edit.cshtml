@@ -1,0 +1,50 @@
+﻿@model FribergTest.Models.Customer
+
+@{
+    Layout = "_CustomerLayout";
+    ViewData["Title"] = "Edit";
+}
+
+<div class="back">
+    <form asp-action="BackToIndex">
+        <input type="hidden" asp-for="CustomerId" />
+        <input type="submit" value="Tillbaka" />
+    </form>
+</div>
+
+<h1><i class="fa-solid fa-pencil"></i>  <i class="fa-solid fa-user"></i> </h1>
+
+<hr />
+
+
+<div>
+    <div class="form">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CustomerId" />
+            <div>
+                <label asp-for="CustomerFirstName">Förnamn: </label>
+                <input asp-for="CustomerFirstName" class="textbox" />
+                <span asp-validation-for="CustomerFirstName"></span>
+            </div>
+            <div>
+                <label asp-for="CustomerLastName">Efternamn: </label>
+                <input asp-for="CustomerLastName" class="textbox" />
+                <span asp-validation-for="CustomerLastName"></span>
+            </div>
+            <div>
+                <label asp-for="CustomerEmail">E-mail: </label>
+                <input asp-for="CustomerEmail" class="textbox" />
+                <span asp-validation-for="CustomerEmail"></span>
+            </div>
+            <div>
+                <label asp-for="CustomerPassword">Lösenord: </label>
+                <input asp-for="CustomerPassword" class="textbox" />
+                <span asp-validation-for="CustomerPassword"></span>
+            </div>
+            <div>
+                <input type="submit" value="Save" class="input-button" />
+            </div>
+        </form>
+    </div>
+</div>

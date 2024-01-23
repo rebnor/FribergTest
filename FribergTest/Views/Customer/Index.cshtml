@@ -1,0 +1,56 @@
+﻿@model FribergTest.Models.Customer
+@{
+    // ViewData["Layout"] = "_CustomerLayout";
+    // ViewData["Title"] = "_CustomerLayout";
+    Layout = "_CustomerLayout";
+    ViewData["Title"] = "Index";
+}
+
+<h1>Välkommen @ViewBag.User</h1>
+
+<div class="index-admin">
+    <div>
+        <a asp-area="" asp-controller="Home" asp-action="ShowCars"><i class="fa-solid fa-angles-right"></i> Boka bil <i class="fa-solid fa-car-side"></i> </a>
+    </div>
+    <div>
+        <a asp-area="" asp-controller="Customer" asp-action="History" asp-route-id="@Model.CustomerId"><i class="fa-solid fa-angles-right"></i> Visa historik <i class="fa-regular fa-file-lines"></i></a>
+    </div>
+</div>
+
+<hr />
+
+<h1><i class="fa-regular fa-file-lines"></i> <i class="fa-solid fa-user"></i> </h1>
+
+<div class="dl-div">
+
+    <dl>
+        <dt>
+            Id
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CustomerId)
+        </dd>
+        <dt>
+            Namn
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CustomerFirstName)
+            @Html.DisplayFor(model => model.CustomerLastName)
+        </dd>
+        <dt>
+            E-mail
+        </dt> 
+        <dd>
+            @Html.DisplayFor(model => model.CustomerEmail)
+        </dd>
+        <dt>
+            Lösenord
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CustomerPassword)
+        </dd>
+    </dl>
+</div>
+<div class="edits">
+    <a asp-action="Edit" asp-route-id="@Model?.CustomerId"><i class="fa-solid fa-angles-right"></i> Redigera <i class="fa-solid fa-pencil"></i></a>
+</div>

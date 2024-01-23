@@ -1,0 +1,46 @@
+﻿@model IEnumerable<FribergTest.Models.Rent>
+
+@{
+    Layout = "_CustomerLayout";
+    ViewData["Title"] = "History";
+}
+
+
+<h1>History</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Bil
+            </th>
+            <th>
+                Startdatum
+            </th>
+            <th>
+                Slutdatum
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+            <tr class="tr-td">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Car.Brand)
+                    @* @Html.DisplayFor(modelItem => item.Car.CarModel) *@
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RenturnDate)
+            </td>
+            <td>
+             
+            </td>
+        </tr>
+            @* <a asp-controller="Customer" asp-action="Index" asp-route-id="@item.Customer.CustomerId">&larr; Tillbaka</a> *@
+}
+    </tbody>
+</table>

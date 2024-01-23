@@ -1,0 +1,34 @@
+﻿@model FribergTest.Models.Car
+
+@{
+    ViewData["Title"] = "DetailsCar";
+}
+
+<h1>Information om bil</h1>
+
+<div class="dl-div">
+
+    <dl>
+        <dt>
+            Märke
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Brand)
+        </dd>
+        <dt>
+            Modell
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CarModel)
+        </dd>
+        <dt>
+            Pris/Dygn
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PricePerDay)kr
+        </dd>
+    </dl>
+</div>
+<div class="edits">
+    <a asp-action="Book" asp-route-id="@Model?.CarId">Boka</a>
+</div>

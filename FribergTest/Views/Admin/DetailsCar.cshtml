@@ -1,0 +1,43 @@
+﻿@model FribergTest.Models.Car
+
+@{
+    ViewData["Title"] = "DetailsCar";
+}
+<div class="back">
+    <a asp-action="ListCar">&larr; Tillbaka</a>
+</div>
+<h1><i class="fa-regular fa-file-lines"></i>  <i class="fa-solid fa-car"></i></h1>
+
+<hr />
+
+<div class="dl-div">
+    <dl>
+        <dt>
+            Märke
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Brand)
+        </dd>
+        <dt>
+            Modell
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CarModel)
+        </dd>
+        <dt>
+            Pris/Dygn
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PricePerDay)
+        </dd>
+        <dt>
+            Uthyrd
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IsRented)
+        </dd>
+    </dl>
+</div>
+<div class="edits">
+    <a asp-action="EditCar" asp-route-id="@Model?.CarId"><i class="fa-solid fa-angles-right"></i> Redigera bil <i class="fa-solid fa-pencil"></i></a>
+</div>

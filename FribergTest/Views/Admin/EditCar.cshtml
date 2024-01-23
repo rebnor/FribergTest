@@ -1,0 +1,52 @@
+﻿@model FribergTest.Models.Car
+
+@{
+    ViewData["Title"] = "EditCar";
+}
+
+<div class="back">
+    <a asp-action="ListCar">&larr; Tillbaka</a>
+</div>
+
+<h1> <i class="fa-solid fa-pencil"></i> <i class="fa-solid fa-car"></i> </h1>
+
+<hr />
+<div>
+    <div class="form">
+        <form asp-action="EditCar">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CarId" />
+
+            <div>
+                <label asp-for="Brand">Märke: </label>
+                <input asp-for="Brand" class="textbox" />
+                <span asp-validation-for="Brand"></span>
+            </div>
+            <div>
+                <label asp-for="CarModel">Model: </label>
+                <input asp-for="CarModel" class="textbox" />
+                <span asp-validation-for="CarModel"></span>
+            </div>
+            <div>
+                <label asp-for="PricePerDay">Pris/Dygn</label>
+                <input asp-for="PricePerDay" class="textbox" />
+                <span asp-validation-for="PricePerDay"></span>
+            </div>
+
+            <div class="checkboxarea">
+                <div class="myCheckbox">
+
+                    <input class="checkbox" asp-for="IsRented" />
+                    <label for="checkbox">
+                        Uthyrd
+                    </label>
+                </div>
+            </div>
+
+
+            <div>
+                <input type="submit" value="Save" class="input-button" />
+            </div>
+        </form>
+    </div>
+</div>

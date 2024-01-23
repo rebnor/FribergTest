@@ -1,0 +1,65 @@
+﻿@model FribergTest.Models.Customer
+@{
+    ViewData["Title"] = "_CustomerLayout";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - FribergTest</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/lib/font-awesome/css/all.css" asp-append-version="true" />
+</head>
+<body>
+    <header >
+
+
+
+        <div class="navigation loggedIn">
+            <nav>
+                <ul>
+                    <img src="~/css/friberg_logo.png" width="200" height="220" />
+
+                    <li>
+                        <a class="nav-left" asp-area="" asp-controller="Home" asp-action="Index">Logga ut</a>
+                    </li>
+
+                    <li>
+                        <a class="nav-left" asp-area="" asp-controller="Customer" asp-action="ShowCars">Boka Bil</a>
+                    </li>
+     
+                </ul>
+            </nav>
+        </div>
+
+    </header>
+   
+
+    <div class="content">
+
+        <main role="main" class="main">
+
+            @RenderBody()
+
+        </main>
+
+    </div>
+
+    <footer>
+
+        <div class="footer">
+
+            &copy; 2024 - Friberg Biluthyrning AB
+
+        </div>
+
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+

@@ -1,0 +1,45 @@
+﻿@model FribergTest.Models.Rent
+
+@{
+    ViewData["Title"] = "CreateRent";
+}
+
+
+<h1>Lägg in ny bokning</h1>
+
+<hr />
+<div>
+    <div>
+        <form asp-action="CreateRent">
+            <div asp-validation-summary="ModelOnly"></div>
+            <div>
+                <label asp-for="StartDate"></label>
+                <input asp-for="StartDate" />
+                <span asp-validation-for="StartDate"></span>
+            </div>
+            <div>
+                <label asp-for="RenturnDate"></label>
+                <input asp-for="RenturnDate" />
+                <span asp-validation-for="RenturnDate"></span>
+            </div>
+            <div>
+                <label asp-for="Customer.CustomerId"></label>
+                <input asp-for="Customer.CustomerId" />
+                <span asp-validation-for="Customer.CustomerId"></span>
+            </div>
+            <div>
+                <label asp-for="Car.CarId"></label>
+                <input asp-for="Car.CarId" />
+                <span asp-validation-for="Car.CarId"></span>
+            </div>
+            <div>
+                <input type="submit" value="Create" class="input-button" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="ListRent">Back to List</a>
+</div>
+

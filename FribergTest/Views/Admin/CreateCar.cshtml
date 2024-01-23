@@ -1,0 +1,46 @@
+﻿@model FribergTest.Models.Car
+
+@{
+    ViewData["Title"] = "CreateCar";
+}
+<h1>Lägg till bil</h1>
+
+<hr />
+<div>
+    <div class="form">
+        <form asp-action="CreateCar">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div>
+                <label asp-for="Brand"></label>
+                <input asp-for="Brand" />
+                <span asp-validation-for="Brand"></span>
+            </div>
+            <div>
+                <label asp-for="CarModel"></label>
+                <input asp-for="CarModel" />
+                <span asp-validation-for="CarModel"></span>
+            </div>
+            <div>
+                <label asp-for="PricePerDay"></label>
+                <input asp-for="PricePerDay" />
+                <span asp-validation-for="PricePerDay"></span>
+            </div>
+
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsRented" /> @Html.DisplayNameFor(model => model.IsRented)
+                </label>
+            </div>
+
+            <div>
+                <input type="submit" value="Create" class="input-button" />
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

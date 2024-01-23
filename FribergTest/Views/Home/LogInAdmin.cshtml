@@ -1,0 +1,39 @@
+﻿@model FribergTest.Models.Admin
+
+@{
+    ViewData["Title"] = "LogInAdmin";
+}
+<div class="back">
+    <a asp-action="Index">&larr; Tillbaka</a>
+</div>
+<h1><i class="fa-solid fa-user-tie"></i></h1>
+
+
+<p>@ViewBag.Wrong</p>
+<hr />
+
+<div class="form">
+    <form asp-action="LogInAdmin">
+
+        <div asp-validation-summary="ModelOnly"></div>
+
+        <div>
+            <label asp-for="AdminUserName">Användarnamn: </label>
+            <input asp-for="AdminUserName" class="textbox"/>
+            <span asp-validation-for="AdminUserName"></span>
+        </div>
+        <div>
+            <label asp-for="AdminPassword">Lösenord: </label>
+            <input asp-for="AdminPassword" class="textbox" />
+            <span asp-validation-for="AdminPassword"></span>
+        </div>
+        <div>
+            <input type="submit" value="Logga in" class="input-button" />
+        </div>
+    </form>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

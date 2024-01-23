@@ -1,0 +1,65 @@
+﻿@model IEnumerable<FribergTest.Models.Customer>
+
+@{
+    ViewData["Title"] = "ListCustomer";
+}
+
+<div class="back">
+    <a asp-action="Index">&larr; Tillbaka</a>
+</div>
+<h1>Alla kunder</h1>
+<hr />
+
+<p class="edits createNew">
+    <a asp-action="CreateCustomer"><i class="fa-solid fa-angles-right"></i> Lägg till ny kund <i class="fa-solid fa-angles-left"></i></a>
+</p>
+<table class="table create-customer">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Förnamn
+            </th>
+            <th>
+                Efternamn
+            </th>
+            <th>
+                E-mail
+            </th>
+            <th>
+                Lösenord
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="tr-td">
+                <td>
+                    @Html.DisplayFor(modelItem => item.CustomerId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CustomerFirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CustomerLastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CustomerEmail)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CustomerPassword)
+                </td>
+                <td class="edits">
+                    <a asp-action="EditCustomer" asp-route-id="@item.CustomerId"><i class="fa-solid fa-pencil"></i></a> |
+                    <a asp-action="DetailsCustomer" asp-route-id="@item.CustomerId"><i class="fa-solid fa-circle-info"></i></a> |
+                    <a asp-action="DeleteCustomer" asp-route-id="@item.CustomerId"><i class="fa-solid fa-trash-can"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

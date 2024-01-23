@@ -1,0 +1,118 @@
+﻿@model IEnumerable<FribergTest.Models.Car>
+
+@{
+    ViewData["Title"] = "ShowCars";
+}
+
+<div class="back">
+    <a asp-controller="Home" asp-action="Index">&larr; Tillbaka</a>
+</div>
+<h1>Alla Bilar <i class="fa-solid fa-car-side"></i></h1>
+
+<hr />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Märke
+            </th>
+            <th>
+                Modell
+            </th>
+            <th>
+                Pris/Dygn
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="tr-td">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Brand)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CarModel)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PricePerDay)kr
+                </td>
+                <td class="edits">
+                    @Html.ActionLink("Boka", "DetailsCar", new { id=item.CarId })
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+
+
+
+
+@* @model IEnumerable<FribergTest.Models.Car> *@
+    @* @model FribergTest.ViewModels.CustomerCarViewModel *@
+@* @model IEnumerable<FribergTest.ViewModels.CustomerCarViewModel>
+
+
+@{
+
+    Layout = "_CustomerLayout";
+    ViewData["Title"] = "ShowCars";
+} *@
+
+@* TODO: Viewmodel här för att kunna vara customerID *@
+
+@* <div class="back">
+    @foreach (var item in Model)
+    {
+        <form asp-action="BackToIndex">
+            <input type="hidden" asp-for="@item.Cus" />
+            <input type="submit" value="Tillbaka" />
+        </form>
+    }
+</div>
+<h1>Alla Bilar <i class="fa-solid fa-car-side"></i></h1>
+
+<hr />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Märke
+            </th>
+            <th>
+                Modell
+            </th>
+            <th>
+                Pris/Dygn
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="tr-td">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Car.Brand)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Car.CarModel)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Car.PricePerDay)kr
+                </td>
+                <td class="edits">
+                    @Html.ActionLink("Boka", "DetailsCar", new { id=item.Car.CarId })
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table> *@

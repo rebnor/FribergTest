@@ -1,0 +1,48 @@
+﻿@model FribergTest.Models.Customer
+
+@{
+    ViewData["Title"] = "DeleteCustomer";
+}
+
+<div class="back">
+    <a asp-action="ListCustomer">&larr; Tillbaka</a>
+</div>
+<h1><i class="fa-solid fa-trash-can"></i></h1>
+<hr />
+
+<h3 class="question">Ör du säker på att du vill ta bort kund #@Html.DisplayFor(model=>model.CustomerId)?</h3>
+<div class="dl-div center-me">
+
+    <dl>
+        <dt>
+            ID
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CustomerId)
+        </dd>
+        <dt>
+            Namn
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CustomerFirstName)
+            @Html.DisplayFor(model => model.CustomerLastName)
+        </dd>
+        <dt>
+            E-mail
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CustomerEmail)
+        </dd>
+        <dt>
+            Lösenord
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CustomerPassword)
+        </dd>
+    </dl>
+
+    <form asp-action="DeleteCustomer">
+        <input type="hidden" asp-for="CustomerId" />
+        <input type="submit" value="Delete" class="input-button danger delete" />
+    </form>
+</div>

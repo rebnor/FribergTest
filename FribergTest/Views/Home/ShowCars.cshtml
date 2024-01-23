@@ -1,0 +1,49 @@
+﻿@model IEnumerable<FribergTest.Models.Car>
+
+@{
+    ViewData["Title"] = "ShowCars";
+}
+
+<div class="back">
+    <a asp-action="Index">&larr; Tillbaka</a>
+</div>
+<h1>Alla Bilar <i class="fa-solid fa-car-side"></i></h1>
+
+<hr />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Märke
+            </th>
+            <th>
+                Modell
+            </th>
+            <th>
+                Pris/Dygn
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="tr-td">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Brand)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CarModel)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PricePerDay)kr
+                </td>
+                <td class="edits">
+                    @Html.ActionLink("Boka", "DetailsCar", new { id=item.CarId })
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

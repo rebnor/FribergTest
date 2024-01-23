@@ -1,0 +1,49 @@
+﻿@model FribergTest.ViewModels.RentCustomerCarViewModel
+
+@{
+    ViewData["Title"] = "Book";
+}
+
+
+<h1>Boka bil</h1>
+
+<hr />
+<div>
+    <div class="form">
+
+        <form asp-action="Book" method="post">
+
+            <div asp-validation-summary="ModelOnly"></div>
+            <input type="hidden" asp-for="Id" />
+
+            <div>
+                <label asp-for="Rent.StartDate"></label>
+                <input asp-for="Rent.StartDate"/>
+                <span asp-validation-for="Rent.StartDate"></span>
+            </div>
+            <div>
+                <label asp-for="Rent.RenturnDate"></label>
+                <input asp-for="Rent.RenturnDate"  />
+                <span asp-validation-for="Rent.RenturnDate"></span>
+            </div>
+            <div>
+                <label asp-for="Customer.CustomerId"></label>
+                <input asp-for="Customer.CustomerId" />
+                <span asp-validation-for="Customer.CustomerId"></span>
+            </div>
+            <div>
+                <label asp-for="Car.CarId"></label>
+                <input asp-for="Car.CarId" />
+                <span asp-validation-for="Car.CarId"></span>
+            </div>
+            <div>
+                <input type="submit" value="Create" class="input-button" />
+            </div>
+        </form>
+
+    </div>
+</div>
+
+<div>
+    <a asp-action="ShowCars">Back to List</a>
+</div>

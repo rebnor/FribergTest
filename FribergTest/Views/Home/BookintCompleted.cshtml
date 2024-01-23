@@ -1,0 +1,40 @@
+﻿@model FribergTest.Models.Rent
+
+@{
+    ViewData["Title"] = "BookintCompleted";
+}
+
+
+<h1>Information om bokning</h1>
+
+<div class="dl-div">
+
+    <dl>
+        <dt>
+            Märke
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Car.Brand)
+        </dd>
+        <dt>
+            Modell
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Car.CarModel)
+        </dd>
+        <dt>
+            Pris/Dygn
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Car.PricePerDay)kr
+        </dd>
+        <dt>
+            Datum
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.StartDate) - 
+            @Html.DisplayFor(model => model.RenturnDate)
+        </dd>
+    </dl>
+</div>
+
