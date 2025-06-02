@@ -1,3 +1,3 @@
 #FribergTest
 
-easy Car rental site
+easy Car rental site - MVC
