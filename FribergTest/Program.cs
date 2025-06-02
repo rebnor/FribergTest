@@ -46,7 +46,6 @@ namespace FribergTest
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
 
-
             app.Run();
         }
     }
